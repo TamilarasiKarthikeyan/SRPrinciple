@@ -1,0 +1,38 @@
+﻿using System;
+
+namespace SRPDemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to Singel Responsibility Principle of SOLID Principles");
+
+            Person person = new Person();
+
+            Console.Write("Enter your firstname: ");
+            person.firstName =  Console.ReadLine();
+
+            Console.Write("Enter your lastname: ");
+            person.lastName =  Console.ReadLine();
+
+            if(string.IsNullOrWhiteSpace(person.firstName))
+            {
+                Console.WriteLine("Please enter your valid first name");
+                Console.ReadLine();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(person.lastName))
+            {
+                Console.WriteLine("Please enter your valid last name");
+                Console.ReadLine();
+                return;
+            }
+
+            Console.WriteLine($"Your username is {person.firstName.Substring(0, 1)} {person.lastName}");
+            Console.ReadLine();
+
+        }
+    }
+}
